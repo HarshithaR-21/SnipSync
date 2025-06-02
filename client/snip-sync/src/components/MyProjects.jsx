@@ -78,8 +78,10 @@ useEffect(() => {
                 setProjectData({
                     title: '',
                     description: '',
-                    workingAs: ''
+                    workingAs: '',
+                    inviteLink: ''  
                 });
+                setAddCard(false);
                 toast.success(response.data.message);
             }
             catch (error) {
@@ -131,7 +133,7 @@ useEffect(() => {
     return (
         <div>
             <Toaster toastOptions={{duration:500, style: { background: '#1F2937', color: 'white' } }} />
-            <div className="flex">
+            <div className="flex ml-64">
                 <Sidebar />
                 <div className="min-h-screen bg-gray-900 text-white w-full">
                     <div className="flex px-4 py-2 justify-between bg-black/30">
@@ -196,7 +198,7 @@ useEffect(() => {
                                 }
                                 <button
                                     type="submit"
-                                    className="bg-blue-500 hover:bg-blue-600 p-2 rounded font-semibold cursor-pointer" onClick={handleClose}
+                                    className="bg-blue-500 hover:bg-blue-600 p-2 rounded font-semibold cursor-pointer"
                                 >
                                     Add Project
                                 </button>
